@@ -132,29 +132,6 @@ class MatrizHandler{
         this.visualizarMatriz(resultado, 'resultTable');
     }
 
-    // LIMPIAR // 
-
-    limpiarMatrices() {
-
-        if (this.matriz1.length === 0 && this.matriz2.length === 0) {
-            alert('No hay matrices por limpiar');
-        } else {
-            this.matriz1 = [];
-            this.matriz2 = [];
-            document.getElementById('matrixTable1').innerHTML = '';
-            document.getElementById('matrixTable2').innerHTML = '';
-            document.getElementById('resultTable').innerHTML = '';
-
-            document.getElementById('filas1').value = '';
-            document.getElementById('columnas1').value = '';
-            document.getElementById('filas2').value = '';
-            document.getElementById('columnas2').value = '';
-            document.getElementById('escalarNUM').value = '';
-
-            alert('Matrices limpiadas y campos reiniciados.');
-        }
-    }
-
     // INVERSA //
     obtenerInversa(matriz) {
 
@@ -210,6 +187,7 @@ class MatrizHandler{
             alert("Ingrese una matriz primero.")
             return;
         }
+
         const resultado = [];
         const Escalar = parseInt(document.getElementById(`escalarNUM`).value, 10);
         for (let i = 0; i < matriz.length; i++) {
@@ -234,10 +212,10 @@ class MatrizHandler{
         // Obtén el número de filas y columnas de la matriz original
         const filas = matriz.length;
         const columnas = matriz[0].length;
-      
+        
         // Inicializa una matriz vacía para almacenar la transpuesta
         let resultado = [];
-      
+        
         // Itera sobre las columnas de la matriz original
         for (let j = 0; j < columnas; j++) {
           // Inicializa una nueva fila en la matriz transpuesta
@@ -246,7 +224,7 @@ class MatrizHandler{
           for (let i = 0; i < filas; i++) {
             // Copia el elemento de la matriz original a la posición correspondiente en la transpuesta
             resultado[j][i] = matriz[i][j];
-            }
+        }
         }
         this.visualizarMatriz(resultado, 'resultTable');
     }
@@ -254,16 +232,16 @@ class MatrizHandler{
     divideRow(row, value) {
         return row.map(item => item / value)
     }
-
+    
     multiplyRow(row, value) {
         return row.map(item => item * value)
     }
-
+    
     addRows(row1, row2, invert1, invert2) {
         let row3 = []
     
         row3 = row1.map((item, i) => {
-          return row1[i] * (invert1 ? -1 : 1) + row2[i] * (invert2 ? -1 : 1)
+            return row1[i] * (invert1 ? -1 : 1) + row2[i] * (invert2 ? -1 : 1)
         })
     
         return row3
@@ -279,13 +257,13 @@ class MatrizHandler{
         let pivot = currentRow[i];
     
         m[i] = this.divideRow(currentRow, pivot)
-    
+        
         m = m.map((item, mapIndex) => {
-          if (mapIndex == i) { // ignore already processed row
+        if (mapIndex == i) { // ignore already processed row
             return item
           } else {
             return this.addRows(this.multiplyRow(m[i], -item[i]), item)
-          }
+        }
         })
         return this.solveByGaussJordan(m, i + 1);
     }
@@ -299,8 +277,28 @@ class MatrizHandler{
         let solvedMatrix = this.solveByGaussJordan(matrix);
         this.visualizarMatriz(solvedMatrix, 'resultTable');
     }
-      
 
+    // Limpiar //
+    limpiarMatrices() {
+         
+        if (this.matriz1.length === 0 && this.matriz2.length === 0 && escalarNUM == 0) {
+            alert('No hay matrices por limpiar');
+        } else {
+            this.matriz1 = [];
+            this.matriz2 = [];
+            document.getElementById('matrixTable1').innerHTML = '';
+            document.getElementById('matrixTable2').innerHTML = '';
+            document.getElementById('resultTable').innerHTML = '';
+    
+            document.getElementById('filas1').value = '';
+            document.getElementById('columnas1').value = '';
+            document.getElementById('filas2').value = '';
+            document.getElementById('columnas2').value = '';
+            document.getElementById('escalarNUM').value = '';
+    
+            alert('Matrices limpiadas y campos reiniciados.');
+        }
+    }
 }
 
 const short = (n, decimals = 3) => {
