@@ -202,14 +202,35 @@ class MatrizHandler{
         this.visualizarMatriz(inv, 'resultTable');
     }
 
+
+    // Producto Escalar
+    productoEscalar(matriz) {
+        
+        if (!matriz.length) {
+            alert("Ingrese una matriz primero.")
+            return;
+        }
+        const resultado = [];
+        const Escalar = parseInt(document.getElementById(`escalarNUM`).value, 10);
+        for (let i = 0; i < matriz.length; i++) {
+            const fila = [];
+            for (let j = 0; j < matriz[i].length; j++) {
+                fila.push(matriz[i][j] * Escalar);
+            }
+            resultado.push(fila);
+        }
+    
+        this.visualizarMatriz(resultado, 'resultTable');
+    }
+
     // Transpuesta
     transponerMatriz(matriz) {
         // Verifica si la matriz está vacía
         if (!matriz.length) {
-            prompt("Ingrese una matriz primero.")
+            alert("Ingrese una matriz primero.")
             return;
         }
-      
+        
         // Obtén el número de filas y columnas de la matriz original
         const filas = matriz.length;
         const columnas = matriz[0].length;
@@ -271,6 +292,10 @@ class MatrizHandler{
     
     
     visualizarMatrizIdentidad(matrix){
+        if (!matriz.length) {
+            alert("Ingrese una matriz primero.")
+            return;
+        }
         let solvedMatrix = this.solveByGaussJordan(matrix);
         this.visualizarMatriz(solvedMatrix, 'resultTable');
     }
