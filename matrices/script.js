@@ -247,12 +247,12 @@ class MatrizHandler{
         return row3
     }
 
-    solveByGaussJordan(matrix, i = 0) {
-        if (i == matrix.length) {
-          return fixedPrecisionMatrix(matrix)
+    solveByGaussJordan(matriz, i = 0) {
+        if (i == matriz.length) {
+          return fixedPrecisionMatrix(matriz)
         }
     
-        let m = [...matrix];
+        let m = [...matriz];
         let currentRow = m[i];
         let pivot = currentRow[i];
     
@@ -261,7 +261,7 @@ class MatrizHandler{
         m = m.map((item, mapIndex) => {
         if (mapIndex == i) { // ignore already processed row
             return item
-          } else {
+        } else {
             return this.addRows(this.multiplyRow(m[i], -item[i]), item)
         }
         })
@@ -269,13 +269,13 @@ class MatrizHandler{
     }
     
     
-    visualizarMatrizIdentidad(matrix){
+    visualizarMatrizIdentidad(matriz){
         if (!matriz.length) {
             alert("Ingrese una matriz primero.")
             return;
         }
-        let solvedMatrix = this.solveByGaussJordan(matrix);
-        this.visualizarMatriz(solvedMatrix, 'resultTable');
+        let solvedMatriz = this.solveByGaussJordan(matriz);
+        this.visualizarMatriz(solvedMatriz, 'resultTable');
     }
 
     // Limpiar //
