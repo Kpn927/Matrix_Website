@@ -188,9 +188,15 @@ class MatrizHandler{
             alert("Ingrese una matriz primero.")
             return;
         }
-
+        
         const resultado = [];
         const Escalar = parseInt(document.getElementById(`escalarNUM`).value, 10);
+
+        if (!Escalar) {
+            alert("Ingrese la variable a escalar. ");
+            return;
+        }
+        
         for (let i = 0; i < matriz.length; i++) {
             const fila = [];
             for (let j = 0; j < matriz[i].length; j++) {
