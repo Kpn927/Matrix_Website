@@ -6,9 +6,14 @@ class MatrizHandler{
 
     // INGRESAR //
     ingresarMatriz(matrizNum) {
+
         // El 10 en parseINT es para definir la báse númerica que se va a utilizar, ya sea binario (2), hexadecimal (16) o Decimal (10)
         const filas = parseFloat(document.getElementById(`filas${matrizNum}`).value, 10);
         const columnas = parseFloat(document.getElementById(`columnas${matrizNum}`).value, 10);
+        if (!filas || !columnas) {
+            alert("Por favor, ingresa las medidas.");
+            return;
+        }
         let matriz = [];
 
         for (let i = 0; i < filas; i++) {
