@@ -1,4 +1,4 @@
-# Matrix_Website
+# Matrix Website
 
 - Buenas, en este proyecto para la materia LENGUAJE DE CLIENTES WEB vamos a hacer varias operaciones con matrices que serán las siguientes. 
 (Disculpen por mi increíble diseño, es minimalista 【=◈︿◈=】)
