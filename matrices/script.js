@@ -158,6 +158,7 @@ class MatrizHandler{
 
             if (mat[i][i] === 0) {
                 alert("La matriz no tiene inversa");
+                return;
             }
 
             const pivot = mat[i][i];
