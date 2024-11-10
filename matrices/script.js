@@ -266,6 +266,7 @@ class MatrizHandler{
             return this.addRows(this.multiplyRow(m[i], -item[i]), item)
         }
         })
+
         return this.solveByGaussJordan(m, i + 1);
     }
     
@@ -276,6 +277,10 @@ class MatrizHandler{
             return;
         }
         let solvedMatriz = this.solveByGaussJordan(matriz);
+        if (!solvedMatriz) {
+            alert("La matriz no tiene matriz identidad. ");
+            return;
+        }
         this.visualizarMatriz(solvedMatriz, 'resultTable');
     }
 
