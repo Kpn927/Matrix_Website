@@ -1,0 +1,59 @@
+table {
+    border-collapse: collapse;
+    width: 30%;
+    margin: 20px auto;
+
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #0c0c0c;
+}
+input {
+    margin: 15px;
+    padding: 5px;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+}
+.button_matriz {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+.container1{
+    text-align: center;
+}
+.container {
+    text-align: center;
+}
+.matrix-container {
+    margin: 20px auto;
+}
+.buttonlimpiar{
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+h1{
+    color: #333; /* Color del texto */
+    font-family: Arial, sans-serif; /* Fuente */
+    font-size: 24px; /* Tamaño de la fuente */
+    text-align: center; /* Alineación del texto */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+#escalarNUM{
+    width: 100px; /* Ancho de 300 píxeles */ 
+    height: 20px; /* Alto de 40 píxeles */
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>Ingresar y Visualizar Matrices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ingresar y Visualizar Matrices</h1>
+    <div class="container1">
+
+        <input type="number" id="filas1" placeholder="Número de filas para la primera matriz">
+        <input type="number" id="columnas1" placeholder="Número de columnas para la primera matriz">
+        <button onclick="manejadorMatrices.ingresarMatriz(1)">Ingresar Primera Matriz</button>
+        <br>
+        <input type="number" id="filas2" placeholder="Número de filas para la segunda matriz">
+        <input type="number" id="columnas2" placeholder="Número de columnas para la segunda matriz">
+        <button onclick="manejadorMatrices.ingresarMatriz(2)">Ingresar Segunda Matriz</button>
+
+    </div>
+    <div class="container">
+        <br>
+        <button class="button_matriz" onclick="manejadorMatrices.sumarMatrices()">Sumar Matrices</button>
+        <button class="button_matriz" onclick="manejadorMatrices.restarMatrices()">Restar Matrices</button>
+        <button class="button_matriz" onclick="manejadorMatrices.multiplicarMatrices()">Multiplicar Matrices</button>
+        <button class="button_matriz" onclick="manejadorMatrices.obtenerInversa(manejadorMatrices.matriz1)">Inversa de la matriz 1</button>
+        <button class="button_matriz" onclick="manejadorMatrices.obtenerInversa(manejadorMatrices.matriz2)">Inversa de la matriz 2</button>
+        <br>
+        <button class="button_matriz" onclick="manejadorMatrices.transponerMatriz(manejadorMatrices.matriz1)">Transponer Matriz 1</button>
+        <button class="button_matriz" onclick="manejadorMatrices.transponerMatriz(manejadorMatrices.matriz2)">Transponer Matriz 2</button>
+        <button class="button_matriz" onclick="manejadorMatrices.visualizarMatrizIdentidad(manejadorMatrices.matriz1)">Matriz Identidad 1</button>
+        <button class="button_matriz" onclick="manejadorMatrices.visualizarMatrizIdentidad(manejadorMatrices.matriz2)">Matriz Identidad 2</button>
+        <br>
+        <button class="button_matriz" onclick="manejadorMatrices.productoEscalar(manejadorMatrices.matriz1)">Producto Escalar Matriz 1</button>
+        <button class="button_matriz" onclick="manejadorMatrices.productoEscalar(manejadorMatrices.matriz2)">Producto Escalar Matriz 2</button>
+        <input type="number" id="escalarNUM" placeholder="Número para la matriz escalar">
+        <br>
+        <button class="buttonlimpiar" onclick="manejadorMatrices.limpiarMatrices()">Limpiar Matrices</button>
+    <div id="matricesContainer" class="matrix-container">
+        <table id="matrixTable1"></table>
+        <table id="matrixTable2"></table>
+        <table id="resultTable"></table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
