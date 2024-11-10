@@ -277,7 +277,7 @@ class MatrizHandler{
             return;
         }
         let solvedMatriz = this.solveByGaussJordan(matriz);
-        if (solvedMatriz[1] === NaN) {
+        if (!solvedMatriz[1][1]) {
             alert("La matriz no tiene matriz identidad. ");
             return;
         }
