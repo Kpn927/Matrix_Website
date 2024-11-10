@@ -157,7 +157,7 @@ class MatrizHandler{
             [inv[i], inv[maxRow]] = [inv[maxRow], inv[i]];
 
             if (mat[i][i] === 0) {
-                throw new Error("La matriz no tiene inversa");
+                alert("La matriz no tiene inversa");
             }
 
             const pivot = mat[i][i];
