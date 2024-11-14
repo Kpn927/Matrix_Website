@@ -11,6 +11,10 @@ class MatrizHandler{
         const columnas = parseFloat(document.getElementById(`columnas${matrizNum}`).value, 10);
         let matriz = [];
 
+        if (!filas || !columnas) {
+            alert("Ingresa los números para las dimensiones");
+        }
+
         for (let i = 0; i < filas; i++) {
             let fila = prompt(`Introduce los elementos de la fila ${i + 1} para la matriz ${matrizNum}, separados por comas:`);
             // MAP y NUMBER convierte los números ingresados a números reales, en ejemplo 
